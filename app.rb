@@ -54,16 +54,20 @@ def getResults(city, departure, arrival)
 	body = response.body
 	
 	#body = File.read('sample.txt')
-	body.gsub!("\\", "")
-	body.gsub!("[,", '["",')
-	body.gsub!(",,", ',"",')
-	body.gsub!('"ad","', '"ad",')
-	body.gsub!('"ad","', '"ad",')
-	body.gsub!('","",1]]', ',"",1]]')
-	parsed_body = JSON.parse(body)
-	
-	final_results = []
+	if body.include? "302"
+		return [nil, false]
+	end
+
 	begin
+		body.gsub!("\\", "")
+		body.gsub!("[,", '["",')
+		body.gsub!(",,", ',"",')
+		body.gsub!('"ad","', '"ad",')
+		body.gsub!('"ad","', '"ad",')
+		body.gsub!('","",1]]', ',"",1]]')
+		parsed_body = JSON.parse(body)
+		
+		final_results = []
 		results = parsed_body.fetch(1).fetch(0).fetch(2).fetch(3)
 		results.each do |result|
 			price = result.fetch(4).to_i / 100
