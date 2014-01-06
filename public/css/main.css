@@ -5,6 +5,17 @@ body {
 	background: #eaeaea;
 }
 
+.btn,
+.form-control {
+	border-radius: 0;
+}
+
+.form-control:focus {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
 .form-horizontal div.date {
 	width: 100%;
 }
@@ -18,7 +29,7 @@ nav div.date {
 }
 
 .row:hover {
-	background: #efefef;
+	background: whitesmoke;
 }
 
 .row img {
