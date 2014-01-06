@@ -84,7 +84,7 @@ def getResults(city, departure, arrival)
 		#puts (final_results).inspect
 		[final_results, true]
 
-	rescue Error
+	rescue Exception
 		[nil, false]
 	end
 
