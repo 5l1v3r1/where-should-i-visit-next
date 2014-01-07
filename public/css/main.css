@@ -1,8 +1,17 @@
+html, body{
+    height: 100%;
+}
+
 body {
 	font-size: 13px;
 	line-height: 1.4em;
 	color: #333333;
 	background: #eaeaea;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
 }
 
 .btn,
@@ -29,11 +38,17 @@ nav div.date {
 }
 
 .row:hover {
-	background: whitesmoke;
+	background: #fff;
 }
 
-.row img {
+.row .img {
+	height: 100px;
+	overflow: hidden;
+}
+
+.row .img img {
 	max-width: 100%;
+	min-height: 100px;
 }
 
 .row h1 {
